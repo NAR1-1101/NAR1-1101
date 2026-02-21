@@ -1,9 +1,29 @@
-## Hi there 👋
-- 🔭 I’m currently working on studying for tests... 
-- 🌱 I’m currently learning Python and Java... 
-- 👯 I’m looking to collaborate on game mod development... 
-- 🤔 I’m looking for help with Python coding... 
+# Noir Blocks (Python)
 
-- 📫 How to reach me: it.nar1.1101@gmail.com... 
-- 😄 Pronouns: he/him...
-- 🌍️ Country of residence: Japan!
+テトリスの「落ちもの」要素と、同色ブロックをつなげて消すパズル要素を混ぜたシングルプレイゲームです。
+
+## 特徴
+- ホーム画面から難易度を選択して開始（EASY / NORMAL / HARD）
+- シックでダークトーンなUIデザイン
+- テトリス風の落下・回転・ライン消去
+- 4つ以上つながった同色ブロックの消去（パズル要素）
+- 画面下部にバナー広告枠（収益化導線のプレースホルダー）
+
+## 動作環境
+- Python 3.10+
+- 追加ライブラリ不要（標準の `tkinter` を使用）
+
+## 起動方法
+```bash
+python3 game.py
+```
+
+## 操作方法
+- `←` / `→`: 左右移動
+- `↑`: 回転
+- `↓`: 高速落下
+- `Space`: 即落下
+
+## 収益化について
+本実装はデスクトップ向けのため、下部バナーは「広告表示エリア」のUIプレースホルダーです。
+実際に広告配信を行う場合は、配信プラットフォーム（Web/モバイル）に合わせて広告SDKの導入が必要です。
