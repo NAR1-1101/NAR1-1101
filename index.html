@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>Core Pulse Idle</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app" class="app">
+    <header class="status-bar">
+      <div class="stat"><span class="label">Energy</span><span id="energyValue">0</span></div>
+      <div class="stat"><span class="label">EPS</span><span id="epsValue">0</span></div>
+      <div class="stat"><span class="label">Tap</span><span id="tapValue">1</span></div>
+      <div class="stat"><span class="label">倍率</span><span id="multValue">x1.00</span></div>
+      <div class="stat prestige"><span class="label">転生予測</span><span id="shardPreview">0</span></div>
+      <button id="prestigeBtn" class="primary hidden">転生可能</button>
+    </header>
+
+    <main class="main-layout">
+      <section class="core-pane">
+        <div id="buffBanner" class="buff-banner hidden"></div>
+        <button id="coreButton" class="core-button" aria-label="エネルギーコアをタップ">
+          <span>CORE</span>
+        </button>
+      </section>
+
+      <section class="panel-pane">
+        <div class="controls-row">
+          <div class="buy-mode" role="group" aria-label="購入数切替">
+            <button data-buy="1" class="buy-mode-btn active">x1</button>
+            <button data-buy="10" class="buy-mode-btn">x10</button>
+            <button data-buy="100" class="buy-mode-btn">x100</button>
+            <button data-buy="max" class="buy-mode-btn">MAX</button>
+          </div>
+        </div>
+
+        <nav class="tabs">
+          <button class="tab active" data-tab="buildings">設備</button>
+          <button class="tab" data-tab="upgrades">強化</button>
+          <button class="tab" data-tab="permanent">恒久</button>
+          <button class="tab" data-tab="achievements">実績/統計</button>
+        </nav>
+
+        <div id="tab-buildings" class="tab-content active"></div>
+        <div id="tab-upgrades" class="tab-content"></div>
+        <div id="tab-permanent" class="tab-content"></div>
+        <div id="tab-achievements" class="tab-content"></div>
+      </section>
+    </main>
+  </div>
+
+  <div id="toastContainer" class="toast-container"></div>
+
+  <div id="offlineModal" class="modal hidden" aria-modal="true" role="dialog">
+    <div class="modal-card">
+      <h2>オフライン報酬</h2>
+      <p id="offlineSummary"></p>
+      <button id="claimOfflineBtn" class="primary">受け取る</button>
+    </div>
+  </div>
+
+  <div id="prestigeModal" class="modal hidden" aria-modal="true" role="dialog">
+    <div class="modal-card">
+      <h2>コア再構築（転生）</h2>
+      <p id="prestigeSummary"></p>
+      <div class="row">
+        <button id="cancelPrestigeBtn">キャンセル</button>
+        <button id="confirmPrestigeBtn" class="primary">実行する</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
