@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pulse Forge</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>Pulse Forge</h1>
+      <div id="eventBanner" class="event-banner hidden"></div>
+    </header>
+
+    <main class="layout">
+      <section class="panel click-panel">
+        <h2>コア制御</h2>
+        <button id="coreButton" class="core-button" aria-label="Generate Energy">CORE TAP</button>
+        <div id="floatingContainer" class="floating-container"></div>
+        <div class="stats-row"><span>クリック獲得量</span><strong id="clickValue">1</strong></div>
+        <div class="stats-row"><span>全体倍率</span><strong id="globalMultiplier">x1.00</strong></div>
+        <div class="stats-row"><span>バフ</span><strong id="buffState">なし</strong></div>
+      </section>
+
+      <section class="panel status-panel">
+        <h2>ステータス</h2>
+        <div class="resource-main">
+          <span>Energy</span>
+          <strong id="energyValue">0</strong>
+        </div>
+        <div class="stats-row"><span>EPS</span><strong id="epsValue">0/s</strong></div>
+        <div class="stats-row"><span>Shard</span><strong id="shardValue">0</strong></div>
+        <div class="stats-row"><span>転生予測</span><strong id="prestigeEstimate">0</strong></div>
+        <div class="stats-row"><span>次回保存</span><strong id="saveState">-</strong></div>
+
+        <div class="prestige-box">
+          <button id="prestigeButton" disabled>次元再起動 (転生)</button>
+          <p>通常進行をリセットして Shard を獲得</p>
+        </div>
+
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="upgrades">通常強化</button>
+          <button class="tab-btn" data-tab="permanent">恒久強化</button>
+          <button class="tab-btn" data-tab="achievements">実績</button>
+          <button class="tab-btn" data-tab="stats">統計</button>
+        </div>
+        <div id="tab-upgrades" class="tab-content"></div>
+        <div id="tab-permanent" class="tab-content hidden"></div>
+        <div id="tab-achievements" class="tab-content hidden"></div>
+        <div id="tab-stats" class="tab-content hidden"></div>
+      </section>
+
+      <section class="panel shop-panel">
+        <h2>設備</h2>
+        <div id="buildingList" class="list"></div>
+      </section>
+    </main>
+
+    <footer class="footer-actions">
+      <button id="saveButton">手動セーブ</button>
+      <button id="resetButton">データリセット</button>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
